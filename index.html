@@ -33,7 +33,7 @@
         firebase.initializeApp(firebaseConfig);
     </script> 
 
-    <div id='map' style='width: 400px; height: 300px;'></div>
+    <div id='map' style='width: 800px; height: 600px;'></div>
     <script>
         // TO MAKE THE MAP APPEAR YOU MUST
         // ADD YOUR ACCESS TOKEN FROM
@@ -42,9 +42,9 @@
         var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-        center: [44.2253, 76.4951], // starting position [lng, lat] // currently Queen's University
-        zoom: 9 // starting zoom
-        });
+        center: [-76.4951, 44.2253], // starting position [lng, lat] // currently Queen's University
+        zoom: 15 // starting zoom
+        }); 76.4951
     </script>
 
 </body>
