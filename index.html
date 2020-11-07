@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Covid Supply Tracker</title>
 </head>
 <body>
     <h1>Covid Supply Tracker</h1>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDreqE1k2gMgu9cL-oPDbKNUsbr189a7KI",
+            authDomain: "covidsuppliestracker-294919.firebaseapp.com",
+            databaseURL: "https://covidsuppliestracker-294919.firebaseio.com",
+            projectId: "covidsuppliestracker-294919",
+            storageBucket: "covidsuppliestracker-294919.appspot.com",
+            messagingSenderId: "587340997182",
+            appId: "1:587340997182:web:7749f0096f14ac74cc276f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script> 
+
 </body>
 </html>
