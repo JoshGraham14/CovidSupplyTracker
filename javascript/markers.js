@@ -87,21 +87,13 @@ function addListener(){
         // gets mouse coordinates and adds them to array
         var mousecoords = e.lngLat;
         var coordarray = mousecoords.toArray();
-<<<<<<< HEAD
-        testarr.push(coordarray[0]);
-        testarr.push(coordarray[1]);
-        testarr.push(false);
-        console.log(testarr);
-        addMarker(testarr);
-=======
         fields.push(coordarray[0]);
         fields.push(coordarray[1]);
         fields.push(stock);
 
         addMarker(fields);
+        addData(currentItem, userString, fields);
         readData(currentItem);
-        addData(currentItem, userString, fields)
->>>>>>> a48b6cb90365f623860f3bfe7c96cc5aa7c37df1
     });
 }
 
