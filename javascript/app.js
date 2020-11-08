@@ -14,16 +14,37 @@ firebase.initializeApp(firebaseConfig);
 //var firestore = firebase.firestore();
 var db = firebase.firestore();
 
-// function readData(coll){
-//     var collectionInfo = [];
-//     db.collection(coll).get().then((querySnapshot) => {
-//         querySnapshot.forEach((doc) => {
-//             console.log(doc.id + "  " + doc.data().Longitude + "  " + doc.data().Latitude + "  " + doc.data().Instock);
-//         });
-//     });
-//     return collectionInfo;
-// }
+/* This function reads data from the database from a specific collection.
+   That data is sent to the addMarker function (in markers.js) which populates 
+   the markers on the grid.
 
+    Parameters:
+        coll (str): collection name (i.e. Masks, Toilet Paper, etc.)
+
+*/
+function readData(coll){
+    db.collection(coll).get().then((querySnapshot) => {
+        var docInfo = [];
+        querySnapshot.forEach((doc) => {
+            // creates array of [store name, longitude, latitude, instock]
+            docInfo = [doc.id, doc.data().Longitude, doc.data().Latitude, doc.data().Instock];
+            // calls addmarker function to populate all the markers that are read from the data base
+            addMarker(docInfo);
+        });
+    });
+    //return collectionInfo;
+}
+
+/* This function adds new data to the data base.
+
+    Parameters:
+        coll (str): collection name (i.e. Masks, Toilet Paper, etc.)
+        document (str): document name (i.e. the name of the store)
+        fields (array): array of fields associated with document
+                         index 0 (float) = longitude
+                         index 1 (float) = latitude
+                         index 2 (boolean) = Instock
+*/
 function addData(coll, document, fields) {
     db.collection(coll).doc(document).set({
         Longitude: fields[0],
@@ -32,8 +53,8 @@ function addData(coll, document, fields) {
     })
 }
 
-//info = readData("Masks");
-//console.log(info);
+info = readData("Masks");
+
 
 // for (let i = 0; i < info.length; i++){
 //     console.log("Store: " + info[i][0] + "\tLongitude: " + info[i][1] + "\tLatitude: " + info[i][2] + "\tInstock: " + info[i][3]);
