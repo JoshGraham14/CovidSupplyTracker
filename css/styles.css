@@ -12,14 +12,20 @@ body{
     color: rgb(0, 0, 0)
 }
 
+p{
+    color: white;
+    margin-top: 20px;
+}
+
 .main-section{
     display: grid;
     grid-template-areas: "map map bhead bhead"
                          "map map mbtn  tpbtn"
                          "map map hsbtn gbtn "
+                         "map map adesc adesc"
                          "map map abtn  tinput"
                          "map map none rin";
-    grid-template-rows: 100px 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 25% 25% 1fr 1fr 0.5fr;
 }
 
@@ -58,6 +64,10 @@ body{
     cursor: pointer;
 }
 
+.add-desc{
+    grid-area: adesc;
+}
+
 #add-button{
     background-color: #d33636; /* Green */
     border: none;
@@ -65,7 +75,7 @@ body{
     text-align: center;
     text-decoration: none;
     font-size: 25px;
-    margin: 50px 50px 50px 50px;
+    margin: 0px 50px 50px 50px;
     grid-area: abtn;
 }
 
@@ -83,32 +93,34 @@ button{
 
 #masks{
     grid-area: mbtn;
-    margin: 50px 50px 50px 50px;
+    margin: 20px 20px 20px 20px;
 }
 
 #toilet-paper{
     grid-area: tpbtn;
-    margin: 50px 50px 50px 50px;
+    margin: 20px 20px 20px 20px;
 }
 
 #hand-sanitizer{
     grid-area: hsbtn;
-    margin: 50px 50px 50px 50px;
+    margin: 20px 20px 20px 20px;
 }
 
 #gloves{
     grid-area: gbtn;
-    margin: 50px 50px 50px 50px;
+    margin: 20px 20px 20px 20px;
 }
 
 label{
     color: white;
     font-size: 20px;
+    margin-bottom: 55px;
 }
 
 .input-box{
     color: black;
     margin-left: 0.5rem;
+    margin-bottom: 55px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 7px;
