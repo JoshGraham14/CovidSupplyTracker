@@ -25,13 +25,17 @@ function readData(coll){
     db.collection(coll).get().then((querySnapshot) => {
         // initializes array that will be sent to addMarker
         var docInfo = [];
+        var marker;
+        var markers = [];
         // loops through each document in the collection
         querySnapshot.forEach((doc) => {
             // creates array of [store name, longitude, latitude, instock]
             docInfo = [doc.id, doc.data().Longitude, doc.data().Latitude, doc.data().Instock];
             // calls addmarker function to populate all the markers that are read from the data base
-            addMarker(docInfo);
+            marker = addMarker(docInfo);
+            markers.push(marker);
         });
+        return markers;
     });
     //return collectionInfo;
 }
