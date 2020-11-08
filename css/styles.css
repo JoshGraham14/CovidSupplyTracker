@@ -12,6 +12,16 @@ body{
     color: rgb(0, 0, 0)
 }
 
+.main-section{
+    display: grid;
+    grid-template-areas: "map map bhead bhead"
+                         "map map mbtn  tpbtn"
+                         "map map hsbtn gbtn "
+                         "map map abtn  None";
+    grid-template-rows: 100px 1fr 1fr 1fr;
+    grid-template-columns: 25% 25% 1fr 1fr 0.5fr;
+}
+
 .logo{
     width: 13%;
     display: block;
@@ -21,17 +31,21 @@ body{
 }
 
 #map{
-    margin: 50px 20px 30px 40px;
+    margin: 50px 20px 30px 100px;
+    grid-area: map;
+}
+
+.button-header{
+    color: white;
+    grid-area: bhead;
+    margin-top: 50px;
 }
 
 .supply-buttons{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #00369b; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    margin: 50px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -40,4 +54,41 @@ body{
 .supply-buttons:hover{
     background-color: #011d52;
     cursor: pointer;
+}
+
+#add-button{
+    background-color: #d33636; /* Green */
+    border: none;
+    color: white;
+    margin: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 50px 50px 50px 50px;
+    grid-area: abtn;
+}
+
+#add-button:hover{
+    background-color: #741212;
+    cursor: pointer;
+}
+
+#masks{
+    grid-area: mbtn;
+    margin: 50px 50px 50px 50px;
+}
+
+#toilet-paper{
+    grid-area: tpbtn;
+    margin: 50px 50px 50px 50px;
+}
+
+#hand-sanitizer{
+    grid-area: hsbtn;
+    margin: 50px 50px 50px 50px;
+}
+
+#gloves{
+    grid-area: gbtn;
+    margin: 50px 50px 50px 50px;
 }

@@ -6,20 +6,21 @@
             index 1 = longitude
             index 2 = latitude
             index 3 = boolean (stock)
-        contents: contents of the popup i.e. relevant information to the popup
 
     returns marker type
 
 */
 
-function addMarker(arr, contents){
-    // if there is only a title passed to the function, gives a default response
-    if (contents === undefined){
-        contents = "No information available";
-    };
-
+function addMarker(arr){
+    var stock = "";
+    // sets a string value for if the item is in stock, to print as a subheader on the marker
+    if(arr[3])
+        stock = "in stock";
+    else
+        stock = "out of stock";
+    
     // creates a new pop-up to be linked with marker
-    var pop = new mapboxgl.Popup({offset: 25, maxWidth: 300}).setHTML("<h1>"+arr[0]+"</h1>"+contents);
+    var pop = new mapboxgl.Popup({offset: 25, maxWidth: 300}).setHTML("<h3>"+arr[0]+"</h3>" + stock);
     // creates marker and adds it to the map
     var marker = new mapboxgl.Marker().setPopup(pop).setLngLat([arr[1], arr[2]]).addTo(map);
     //return marker;

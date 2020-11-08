@@ -11,6 +11,7 @@
 </head>
 <body>
     <img class="logo" src="img/logo.png" alt="Pandemic Product Finder logo">
+
     <div id='map' style='width: 800px; height: 600px;'></div>
     <script>
         // TO MAKE THE MAP APPEAR YOU MUST
@@ -26,10 +27,32 @@
     </script>
     <button onclick="maskListener()" class="supply-buttons" type="button">Mask</button>
 
-    <script type="text/javascript" src="javascript/markers.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
-    <script type="text/javascript" src="javascript/app.js"></script>
+    <section class ="main-section">
+        <div id='map' style='width: 800px; height: 600px;'></div>
+        <script>
+            // TO MAKE THE MAP APPEAR YOU MUST
+            // ADD YOUR ACCESS TOKEN FROM
+            // https://account.mapbox.com
+            mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zaGdyYWhhbTE0IiwiYSI6ImNraDg2am84cDA2dmYycnBwbW12MzV4aXgifQ.50kTaauzmQEOroqSKf4e1A';
+            var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+            center: [-76.491299, 44.229932], // starting position [lng, lat] // currently Queen's University
+            zoom: 14 // starting zoom
+            }); 76.4951
+        </script>
+        <h2 class="button-header">select what you are looking for and the map will populate</h2>
+        <button class="supply-buttons" id="masks" type="button">Masks</button>
+        <button class="supply-buttons" id="toilet-paper" type="button">Toilet Paper</button>
+        <button class="supply-buttons" id="hand-sanitizer" type="button">Hand Sanitizer</button>
+        <button class="supply-buttons" id="gloves" type="button">Gloves</button>
+        <button id="add-button" type="button">Add</button>
+
+        <script type="text/javascript" src="javascript/markers.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+        <script type="text/javascript" src="javascript/app.js"></script>
+    </section>
 </body>
 </html>
