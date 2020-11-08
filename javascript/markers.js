@@ -14,16 +14,20 @@
 var locations = [];
 function addMarker(arr){
     var stock = "";
+    var pincolor;
     // sets a string value for if the item is in stock, to print as a subheader on the marker
-    if(arr[3])
+    if(arr[3]) {
         stock = "in stock";
-    else
+        pincolor = "#FF0000";
+    } else {
         stock = "out of stock";
-    
+        pincolor = "#00FF00";
+    }
+
     // creates a new pop-up to be linked with marker
     var pop = new mapboxgl.Popup({offset: 25, maxWidth: 300}).setHTML("<h3>"+arr[0]+"</h3>" + stock);
     // creates marker and adds it to the map
-    var marker = new mapboxgl.Marker().setPopup(pop).setLngLat([arr[1], arr[2]]).addTo(map);
+    var marker = new mapboxgl.Marker({color: pincolor}).setPopup(pop).setLngLat([arr[1], arr[2]]).addTo(map);
 
     locations.push(marker);
     return marker;
