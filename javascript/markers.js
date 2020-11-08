@@ -92,8 +92,8 @@ function addListener(){
         fields.push(stock);
 
         addMarker(fields);
+        addData(currentItem, userString, fields);
         readData(currentItem);
-        addData(currentItem, userString, fields)
     });
 }
 
