@@ -78,13 +78,16 @@ function glovesListener(){
 function addListener(){
     console.log("event listener active");
     // test array
-    var userString = "TEST";
     var stock = false;
     var  fields = [];
 
     // One time listener
     map.once('click', function(e){
         // gets mouse coordinates and adds them to array
+        var userString = document.getElementById("store-name").value;
+        var lowercaseString = userString.toLowerCase();
+        var firstLetter = lowercaseString[0].toUpperCase();
+        var finalword = firstLetter + lowercaseString.slice(1, userString.length);
         var mousecoords = e.lngLat;
         var coordarray = mousecoords.toArray();
         fields.push(coordarray[0]);
@@ -92,7 +95,7 @@ function addListener(){
         fields.push(stock);
 
         addMarker(fields);
-        addData(currentItem, userString, fields);
+        addData(currentItem, finalword, fields);
         readData(currentItem);
     });
 }
