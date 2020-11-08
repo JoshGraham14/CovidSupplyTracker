@@ -23,33 +23,28 @@ function addMarker(arr){
     var pop = new mapboxgl.Popup({offset: 25, maxWidth: 300}).setHTML("<h3>"+arr[0]+"</h3>" + stock);
     // creates marker and adds it to the map
     var marker = new mapboxgl.Marker().setPopup(pop).setLngLat([arr[1], arr[2]]).addTo(map);
-    return marker;
+    //return marker;
 };
 
 function main(){
-    // disable double click zoom
-    map.doubleClickZoom.disable();
-
-    // listener
-    map.on('dblclick', function(e){
-        // testing
-        var goodarr = ["bruh"];
-
-        // Getting mouse coordinates
-        var coords = e.lngLat;
-
-        // toArray to pass into addMarker function
-        var array = coords.toArray();
-        // pushing to goodarr
-        goodarr.push(array[0]);
-        goodarr.push(array[1]);
-
-        addMarker(goodarr, "boobs");
-    });
-
     // Creates a default marker at Queen's campus
     var queenscoords = ["Queen's University", -76.4951, 44.2253];
-    var queensu = addMarker(queenscoords, "Founded god knows when");
+    var queensu = addMarker(queenscoords, "Our sweet little home");
 };
 
 main();
+
+function maskListener(){
+    console.log("event listener active");
+    var testarr = ["bruh"];
+
+    // One time listener
+    map.once('click', function(e){
+        var mousecoords = e.lngLat;
+        var coordarray = mousecoords.toArray();
+        testarr.push(coordarray[0]);
+        testarr.push(coordarray[1]);
+
+        addMarker(testarr, "content");
+    });
+};
