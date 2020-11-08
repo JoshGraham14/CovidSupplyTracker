@@ -89,7 +89,9 @@ function addListener(){
     });
 }
 
+// clear locations function to remove pins when a new item is searched
 function clearLocations(){
+    // for loop to iterate over locations and remove each pin
     var i;
     for (i = 0; i < locations.length; i++){
         locations[i].remove();
