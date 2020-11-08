@@ -17,7 +17,8 @@ body{
     grid-template-areas: "map map bhead bhead"
                          "map map mbtn  tpbtn"
                          "map map hsbtn gbtn "
-                         "map map abtn  tinput";
+                         "map map abtn  tinput"
+                         "map map none rin";
     grid-template-rows: 100px 1fr 1fr 1fr;
     grid-template-columns: 25% 25% 1fr 1fr 0.5fr;
 }
@@ -110,6 +111,18 @@ label{
     display:flex;
     justify-content: center;
     align-items: center;
+}
+
+.radio-input{
+    grid-area: rin;
+}
+
+#out-of-stock{
+    margin-left: 3rem;
+}
+
+#in-stock{
+    margin-left: 3rem;
 }
 
 @media only screen and (max-width: 1822px) {
