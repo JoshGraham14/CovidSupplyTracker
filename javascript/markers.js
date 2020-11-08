@@ -18,10 +18,10 @@ function addMarker(arr){
     // sets a string value for if the item is in stock, to print as a subheader on the marker
     if(arr[3]) {
         stock = "in stock";
-        pincolor = "#FF0000";
+        pincolor = "#1AD530";
     } else {
         stock = "out of stock";
-        pincolor = "#00FF00";
+        pincolor = "#FF0000";
     }
 
     // creates a new pop-up to be linked with marker
@@ -32,14 +32,6 @@ function addMarker(arr){
     locations.push(marker);
     return marker;
 }
-
-function main(){
-    // Creates a default marker at Queen's campus
-    var queenscoords = ["Queen's University", -76.4951, 44.2253];
-    var queensu = addMarker(queenscoords, "Our sweet little home");
-}
-
-main();
 
 // Event listeners
 
@@ -97,7 +89,9 @@ function addListener(){
     });
 }
 
+// clear locations function to remove pins when a new item is searched
 function clearLocations(){
+    // for loop to iterate over locations and remove each pin
     var i;
     for (i = 0; i < locations.length; i++){
         locations[i].remove();
