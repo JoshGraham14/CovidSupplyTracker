@@ -11,27 +11,6 @@
 </head>
 <body>
     <img class="logo" src="img/logo.png" alt="Pandemic Product Finder logo">
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries -->
-
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyDreqE1k2gMgu9cL-oPDbKNUsbr189a7KI",
-            authDomain: "covidsuppliestracker-294919.firebaseapp.com",
-            databaseURL: "https://covidsuppliestracker-294919.firebaseio.com",
-            projectId: "covidsuppliestracker-294919",
-            storageBucket: "covidsuppliestracker-294919.appspot.com",
-            messagingSenderId: "587340997182",
-            appId: "1:587340997182:web:7749f0096f14ac74cc276f"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script> 
-
     <div id='map' style='width: 800px; height: 600px;'></div>
     <script>
         // TO MAKE THE MAP APPEAR YOU MUST
@@ -45,6 +24,12 @@
         zoom: 15 // starting zoom
         }); 76.4951
     </script>
+    <button class="supply-buttons" type="button">Mask</button>
+
     <script type="text/javascript" src="javascript/markers.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <script type="text/javascript" src="javascript/app.js"></script>
 </body>
 </html>
