@@ -1,5 +1,5 @@
 # Pandemic Product Finder (PPF)
-*Made during the 24 hour, Queen's Univeristy hackHer Hackathon*
+*Made during the 24 hour, Queen's University hackHer Hackathon*
 
 ![PPF Logo](https://i.imgur.com/ItjQPx7.png)
 
