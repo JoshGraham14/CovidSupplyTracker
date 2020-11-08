@@ -29,11 +29,11 @@
             }); 76.4951
         </script>
         <h2 class="button-header">select what you are looking for and the map will populate</h2>
-        <button class="supply-buttons" id="masks" type="button">Masks</button>
-        <button class="supply-buttons" id="toilet-paper" type="button">Toilet Paper</button>
-        <button class="supply-buttons" id="hand-sanitizer" type="button">Hand Sanitizer</button>
-        <button class="supply-buttons" id="gloves" type="button">Gloves</button>
-        <button id="add-button" type="button">Add</button>
+        <button onclick="maskListener()" class="supply-buttons" id="masks" type="button">Masks</button>
+        <button onclick="tpListener()" class="supply-buttons" id="toilet-paper" type="button">Toilet Paper</button>
+        <button onclick="handSanListener()" class="supply-buttons" id="hand-sanitizer" type="button">Hand Sanitizer</button>
+        <button onclick="glovesListener()" class="supply-buttons" id="gloves" type="button">Gloves</button>
+        <button onclick="addListener()" id="add-button" type="button">Add</button>
 
         <script type="text/javascript" src="javascript/markers.js"></script>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
