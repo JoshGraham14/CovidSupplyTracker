@@ -33,7 +33,7 @@ function readData(coll){
             docInfo = [doc.id, doc.data().Longitude, doc.data().Latitude, doc.data().Instock];
             // calls addmarker function to populate all the markers that are read from the data base
             marker = addMarker(docInfo);
-            markers.push(marker);
+            markers.push(marker); 
         });
         return markers;
     });
