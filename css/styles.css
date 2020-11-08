@@ -17,7 +17,7 @@ body{
     grid-template-areas: "map map bhead bhead"
                          "map map mbtn  tpbtn"
                          "map map hsbtn gbtn "
-                         "map map abtn  None";
+                         "map map abtn  tinput";
     grid-template-rows: 100px 1fr 1fr 1fr;
     grid-template-columns: 25% 25% 1fr 1fr 0.5fr;
 }
@@ -91,6 +91,25 @@ body{
 #gloves{
     grid-area: gbtn;
     margin: 50px 50px 50px 50px;
+}
+
+label{
+    color: white;
+    font-size: 20px;
+}
+
+.input-box{
+    color: black;
+    margin-left: 0.5rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#text-input{
+    grid-area: tinput;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen and (max-width: 1822px) {
