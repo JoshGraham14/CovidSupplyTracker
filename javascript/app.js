@@ -20,11 +20,12 @@ var db = firebase.firestore();
 
     Parameters:
         coll (str): collection name (i.e. Masks, Toilet Paper, etc.)
-
 */
 function readData(coll){
     db.collection(coll).get().then((querySnapshot) => {
+        // initializes array that will be sent to addMarker
         var docInfo = [];
+        // loops through each document in the collection
         querySnapshot.forEach((doc) => {
             // creates array of [store name, longitude, latitude, instock]
             docInfo = [doc.id, doc.data().Longitude, doc.data().Latitude, doc.data().Instock];
@@ -52,12 +53,3 @@ function addData(coll, document, fields) {
         Instock: fields[2]
     })
 }
-
-info = readData("Masks");
-
-
-// for (let i = 0; i < info.length; i++){
-//     console.log("Store: " + info[i][0] + "\tLongitude: " + info[i][1] + "\tLatitude: " + info[i][2] + "\tInstock: " + info[i][3]);
-// }
-
-//addData("Masks", "Shoppers Drug Mart", [-76.493627, 44.23394, true]);
