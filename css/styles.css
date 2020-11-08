@@ -74,6 +74,13 @@ body{
     cursor: pointer;
 }
 
+button{
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 24px;
+    font-style: normal;
+}
+
 #masks{
     grid-area: mbtn;
     margin: 50px 50px 50px 50px;
@@ -104,6 +111,7 @@ label{
     margin-left: 0.5rem;
     font-size: 16px;
     font-weight: bold;
+    border-radius: 7px;
 }
 
 #text-input{
