@@ -78,30 +78,25 @@ function glovesListener(){
 function addListener(){
     console.log("event listener active");
     // test array
-    var userString = "TEST";
     var stock = false;
     var  fields = [];
 
     // One time listener
     map.once('click', function(e){
         // gets mouse coordinates and adds them to array
+        var userString = document.getElementById("store-name").value;
+        var lowercaseString = userString.toLowerCase();
+        var firstLetter = lowercaseString[0].toUpperCase();
+        var finalword = firstLetter + lowercaseString.slice(1, userString.length);
         var mousecoords = e.lngLat;
         var coordarray = mousecoords.toArray();
-<<<<<<< HEAD
-        testarr.push(coordarray[0]);
-        testarr.push(coordarray[1]);
-        testarr.push(false);
-        console.log(testarr);
-        addMarker(testarr);
-=======
         fields.push(coordarray[0]);
         fields.push(coordarray[1]);
         fields.push(stock);
 
         addMarker(fields);
+        addData(currentItem, finalword, fields);
         readData(currentItem);
-        addData(currentItem, userString, fields)
->>>>>>> a48b6cb90365f623860f3bfe7c96cc5aa7c37df1
     });
 }
 
