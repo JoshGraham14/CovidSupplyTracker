@@ -91,11 +91,12 @@ function addListener(){
             stock = false;
         }
 
+        // getting user string
         var userString = document.getElementById("store-name").value;
         var lowercaseString = userString.toLowerCase();
         var firstLetter = lowercaseString[0].toUpperCase();
         var finalword = firstLetter + lowercaseString.slice(1, userString.length);
-        
+
         var mousecoords = e.lngLat;
         var coordarray = mousecoords.toArray();
         fields.push(coordarray[0]);
@@ -105,6 +106,7 @@ function addListener(){
         addMarker(fields);
         addData(currentItem, finalword, fields);
         readData(currentItem);
+        document.getElementById("store-name").value = '';
     });
 }
 
