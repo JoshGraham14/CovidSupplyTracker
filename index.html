@@ -11,6 +11,22 @@
 </head>
 <body>
     <img class="logo" src="img/logo.png" alt="Pandemic Product Finder logo">
+
+    <div id='map' style='width: 800px; height: 600px;'></div>
+    <script>
+        // TO MAKE THE MAP APPEAR YOU MUST
+        // ADD YOUR ACCESS TOKEN FROM
+        // https://account.mapbox.com
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zaGdyYWhhbTE0IiwiYSI6ImNraDg2am84cDA2dmYycnBwbW12MzV4aXgifQ.50kTaauzmQEOroqSKf4e1A';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [-76.4951, 44.2253], // starting position [lng, lat] // currently Queen's University
+        zoom: 15 // starting zoom
+        }); 76.4951
+    </script>
+    <button onclick="maskListener()" class="supply-buttons" type="button">Mask</button>
+
     <section class ="main-section">
         <div id='map' style='width: 800px; height: 600px;'></div>
         <script>
