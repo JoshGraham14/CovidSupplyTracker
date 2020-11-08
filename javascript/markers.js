@@ -84,7 +84,7 @@ function addListener(){
         testarr.push(coordarray[0]);
         testarr.push(coordarray[1]);
         testarr.push(false);
-
+        console.log(testarr);
         addMarker(testarr);
     });
 }
