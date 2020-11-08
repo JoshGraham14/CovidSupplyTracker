@@ -10,6 +10,7 @@
     returns marker type
 
 */
+
 var locations = [];
 function addMarker(arr){
     var stock = "";
@@ -36,42 +37,59 @@ function main(){
 
 main();
 
+// Event listeners
+
+// mask event listener
 function maskListener(){
+    // clears all other markers
     clearLocations();
     console.log("event listener active");
+    // populates the map with mask markers
     readData("Masks");
 }
 
+// toilet paper event listener
 function tpListener(){
+    // clears all other markers
     clearLocations();
     console.log("event listener active");
+    // populates the map with toilet paper markers
     readData("Toilet Paper");
 }
 
+// hand sanitizer event listener
 function handSanListener(){
+    // clears all other markers
     clearLocations();
     console.log("event listener active");
+    // populates the map with hand sanitizer markers
     readData("Hand Sanitizer");
 }
 
+// glove listener
 function glovesListener(){
+    // clears all other markers
     clearLocations();
     console.log("event listener active");
+    // populates the map with hand sanitizer markers
     readData("Gloves");
 }
 
 function addListener(){
     console.log("event listener active");
-    var testarr = ["bruh"];
+    // test array
+    var testarr = ["Stages Nightclub"];
 
     // One time listener
     map.once('click', function(e){
+        // gets mouse coordinates and adds them to array
         var mousecoords = e.lngLat;
         var coordarray = mousecoords.toArray();
         testarr.push(coordarray[0]);
         testarr.push(coordarray[1]);
+        testarr.push(false);
 
-        addMarker(testarr, "content");
+        addMarker(testarr);
     });
 }
 
