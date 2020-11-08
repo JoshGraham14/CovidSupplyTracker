@@ -152,7 +152,9 @@ label{
         grid-template-areas:    "map map bhead bhead"
                                 "map map mbtn tpbtn"
                                 "map map hsbtn gbtn"
-                                "map map abtn none";
+                                "map map adesc adesc"
+                                "map map abtn tinput"
+                                "map map none rin";
         grid-template-rows: 1fr 2fr 2fr 2fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
