@@ -10,7 +10,7 @@
     returns marker type
 
 */
-
+var currentItem;
 var locations = [];
 function addMarker(arr){
     var stock = "";
@@ -41,6 +41,7 @@ function maskListener(){
     clearLocations();
     console.log("event listener active");
     // populates the map with mask markers
+    currentItem = "Masks";
     readData("Masks");
 }
 
@@ -50,6 +51,7 @@ function tpListener(){
     clearLocations();
     console.log("event listener active");
     // populates the map with toilet paper markers
+    currentItem = "Toilet Paper";
     readData("Toilet Paper");
 }
 
@@ -59,6 +61,7 @@ function handSanListener(){
     clearLocations();
     console.log("event listener active");
     // populates the map with hand sanitizer markers
+    currentItem = "Hand Sanitizer";
     readData("Hand Sanitizer");
 }
 
@@ -68,28 +71,43 @@ function glovesListener(){
     clearLocations();
     console.log("event listener active");
     // populates the map with hand sanitizer markers
+    currentItem = "Gloves"
     readData("Gloves");
 }
 
 function addListener(){
     console.log("event listener active");
     // test array
-    var testarr = ["Stages Nightclub"];
+    var userString = "TEST";
+    var stock = false;
+    var  fields = [];
 
     // One time listener
     map.once('click', function(e){
         // gets mouse coordinates and adds them to array
         var mousecoords = e.lngLat;
         var coordarray = mousecoords.toArray();
+<<<<<<< HEAD
         testarr.push(coordarray[0]);
         testarr.push(coordarray[1]);
         testarr.push(false);
         console.log(testarr);
         addMarker(testarr);
+=======
+        fields.push(coordarray[0]);
+        fields.push(coordarray[1]);
+        fields.push(stock);
+
+        addMarker(fields);
+        readData(currentItem);
+        addData(currentItem, userString, fields)
+>>>>>>> a48b6cb90365f623860f3bfe7c96cc5aa7c37df1
     });
 }
 
+// clear locations function to remove pins when a new item is searched
 function clearLocations(){
+    // for loop to iterate over locations and remove each pin
     var i;
     for (i = 0; i < locations.length; i++){
         locations[i].remove();
